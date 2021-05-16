@@ -3,6 +3,7 @@ const mongoose = require("mongoose")
 
 const offreRoutes = require("./routes/offre")
 const filiereRoutes = require("./routes/filieres")
+const authRoutes=require("./routes/auth")
 
 const app = express();
 
@@ -29,6 +30,9 @@ app.use("/api/offres", offreRoutes);
 
 //Route pour les filieres
 app.use("/api/filieres", filiereRoutes)
+
+//Route Pour la page d'authentification
+app.use("/api/auth",authRoutes)
 
 const port=process.env.PORT
 
