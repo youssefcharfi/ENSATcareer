@@ -7,7 +7,7 @@ const offreSchema = new mongoose.Schema({
         required:true
     },
     description:{
-        type:Text,
+        type:String,
         required:true
     },
     entreprise:{
@@ -18,11 +18,11 @@ const offreSchema = new mongoose.Schema({
         type:String,
         required:false
     },
-    filieres:{
+    filiere:{
         type: ObjectId,
         ref: 'Filiere',
         required:true
     }
-})
+}, {timestamps:true})
 
 module.exports = mongoose.model('Offre',offreSchema)
