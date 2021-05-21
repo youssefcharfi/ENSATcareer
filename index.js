@@ -1,6 +1,6 @@
 const express = require("express")
 const mongoose = require("mongoose")
-
+const cors=require("cors");
 const offreRoutes = require("./routes/offre")
 const filiereRoutes = require("./routes/filieres")
 const authRoutes=require("./routes/auth")
@@ -12,6 +12,7 @@ require('dotenv').config()
 
 //middlware
 app.use(express.json())
+app.use(cors())
 
 
 
@@ -32,7 +33,7 @@ app.use("/api/offres", offreRoutes);
 app.use("/api/filieres", filiereRoutes)
 
 //Route Pour la page d'authentification
-app.use("/api/auth",authRoutes)
+app.use("/api/user",authRoutes)
 
 const port=process.env.PORT
 

@@ -1,3 +1,4 @@
+const { string, boolean } = require('@hapi/joi')
 const mongoose = require('mongoose')
 const {ObjectId} = mongoose.Schema
 
@@ -17,8 +18,25 @@ const userSchema= new mongoose.Schema({
     filiere:{
      type:ObjectId,
      ref:'Filiere',
-     required:true
-    }
+     required:false
+    },
+    niveau:{
+     type:Number,
+     required:false,
+
+    },
+    description:{
+     type:String,
+     required:false
+    },
+    link:{
+      type:String,
+      required:false
+    },
+    isEntreprise:{
+      type:Boolean,
+      required:true
+     }
     
     
 })

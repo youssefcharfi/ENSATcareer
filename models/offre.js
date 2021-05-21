@@ -22,7 +22,8 @@ const offreSchema = new mongoose.Schema({
         type: ObjectId,
         ref: 'Filiere',
         required:true
-    }
+    },
+    
 }, {timestamps:true})
 
 module.exports = mongoose.model('Offre',offreSchema)
