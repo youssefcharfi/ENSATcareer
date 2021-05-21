@@ -36,7 +36,7 @@ class Signup extends Component {
     };
 
     axios
-      .post('http://localhost:8082/api/user/signup', data)
+      .post('http://localhost:7502/api/user/signup', data)
       .then(res => {
         this.setState({
             name: '',
@@ -135,18 +135,19 @@ class Signup extends Component {
                     onChange={this.onChange}
                   />
                 </div>
-                <div className='form-group'>
+                <div className='form-group'> 
                 <p>Please select your gender:</p>
+                 
                 <input type="radio" id="GINF" name="ginf" value={this.state.filiere} Onchange={this.onChange} />
                 <label for="ginf">Genie Informatique</label>
                 <input type="radio" id="GSEA" name="gsea" value={this.state.filiere} Onchange={this.onChange}/>
                 <label for="female">Genie systeme electroniques automatises </label>
                 <input type="radio" id="gstr" name="gstr" value={this.state.filiere} Onchange={this.onChange}/>
-                <label for="other">gstr</label>
+                <label for="other">Genie systeme reseaux telecommunication</label>
                 <input type="radio" id="gind" name="gind" value={this.state.filiere} Onchange={this.onChange}/>
-                <label for="other">GIND</label>
+                <label for="other">Genie Industriel et Logistiques</label>
                 <input type="radio" id="AP" name="AP" value={this.state.filiere} Onchange={this.onChange}/>
-                <label for="other">AP</label>
+                <label for="other">Annees Preparatoires</label>
                 
                 
                   
