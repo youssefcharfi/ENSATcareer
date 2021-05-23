@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../App.css';
 import axios from 'axios';
 
 
@@ -18,7 +17,7 @@ class Signup extends Component {
     };
   }
 
-  onChange = e => {
+  /*onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -165,7 +164,7 @@ class Signup extends Component {
         </div>
       </div>
     );
-  }
+  }*/
 }
 
-export default CreateBook;
+export default Signup;

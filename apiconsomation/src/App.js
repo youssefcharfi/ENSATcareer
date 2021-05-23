@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Login from './components/Login';
 import signup from './components/signup';
@@ -9,13 +8,10 @@ import signup from './components/signup';
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div>
-          <Route exact path='/login' component={login} />
-          <Route path='/signup' component={CreateBook} />
-        </div>
-      </Router>
-    );
+      <h1>
+        saalamm
+      </h1>
+    )
   }
 }
 
