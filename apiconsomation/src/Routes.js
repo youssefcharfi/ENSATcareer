@@ -3,6 +3,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import CreateOffre from './components/CreateOffre'
 import Login from './components/Login'
 import Menu from './components/Menu'
+import OffreDetails from './components/OffreDetails'
 import Offres from './components/Offres'
 import UpdateOffre from './components/UpdateOffre'
 
@@ -15,6 +16,7 @@ const Routes = () => {
                 <Route path='/login' exact component={Login}/>
                 <Route path="/offres" exact component={Offres}/>
                 <Route path="/offres/edit/:id" exact component={UpdateOffre}/>
+                <Route path="/offres/:id" exact component={OffreDetails}/>
             </Switch>
         </BrowserRouter>
     )

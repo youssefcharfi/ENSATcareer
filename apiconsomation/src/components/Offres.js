@@ -72,11 +72,12 @@ function Offres() {
                     </i>
                     <h5 className="card-title font-weight-bold">{offre.title}</h5>
                     <p className="card-text">
-                        {offre.description}
+                        {offre.description.substr(0,250)}<Link to={'/offres/'+offre._id}><a style={{color:"blue"}}> lire la suite...</a></Link>
                     </p>
                     <span style={{textDecoration:'underline'}} className="badge rounded-pill bg-light"><h6>Filière Concernée : {offre.filiere.name}</h6></span>
                     <p className="text-muted">Added {moment(offre.createdAt).startOf().fromNow()}</p>
                     <Link className="btn btn-outline-success" to={'/offres/edit/'+offre._id}><i className="far fa-edit"></i> Modifier</Link>
+                    <Link className="btn btn-outline-info" to={'/offres/'+offre._id}><i class="fas fa-angle-double-right"></i> Details</Link>
                 </div>
             </div> 
         ))}
