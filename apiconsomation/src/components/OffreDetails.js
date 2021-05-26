@@ -10,7 +10,9 @@ function OffreDetails(props) {
             description:'',
             entreprise:'',
             filiere:'',
-            createdAt:''
+            createdAt:'',
+            email:'',
+            telephone:''
         }
     )
 
@@ -24,7 +26,9 @@ function OffreDetails(props) {
                          description: offreSelected.description,
                          entreprise: offreSelected.entreprise,
                          filiere: offreSelected.filiere,
-                         createdAt:offreSelected.createdAt
+                         createdAt: offreSelected.createdAt,
+                         email: offreSelected.email,
+                         telephone: offreSelected.telephone
                      })
                      return
                  }
@@ -54,8 +58,17 @@ function OffreDetails(props) {
                             {offre.description}
                         </p>
                         <span style={{textDecoration:'underline'}} className="badge rounded-pill bg-light"><h6>Filière Concernée : {offre.filiere.name}</h6></span>
+                        {offre.email || offre.telephone ? <p className="mt-3 font-weight-bold h6">Contact : </p> : null}
+                        {offre.email ? 
+                            <p><span className="rounded-pill bg-light font-weight-bold">Email à contacter :</span> {offre.email}</p>
+                         : null
+                        }
+                        {offre.telephone ? 
+                            <p><span className="rounded-pill bg-light font-weight-bold">Telephone à contacter :</span> {offre.telephone}</p>
+                         : null
+                        }
                         <p className="card-text">
-                            <small className="text-muted">Added {moment(offre.createdAt).startOf().fromNow()}</small>
+                            <small className="text-muted mt-1">Added {moment(offre.createdAt).startOf().fromNow()}</small>
                         </p>
                     </div>
                 </div>

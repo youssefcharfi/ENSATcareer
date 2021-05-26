@@ -23,6 +23,14 @@ const offreSchema = new mongoose.Schema({
         ref: 'Filiere',
         required:true
     },
+    email:{
+        type:String,
+        required:false
+    },
+    telephone:{
+        type:String,
+        required:false
+    }
     
 }, {timestamps:true})
 

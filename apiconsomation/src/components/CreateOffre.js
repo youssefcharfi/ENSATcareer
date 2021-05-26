@@ -9,7 +9,9 @@ function CreateOffre() {
         title:'',
         description:'',
         entreprise:'',
-        filiere:''
+        filiere:'',
+        email:'',
+        telephone:''
     })
     
     const [filieres, setFilieres] = useState([])
@@ -46,7 +48,9 @@ function CreateOffre() {
             title:'',
             description:'',
             entreprise:'',
-            filiere:''
+            filiere:'',
+            email:'',
+            telephone:''
         })
     }
     
@@ -75,6 +79,14 @@ function CreateOffre() {
                                     <option key={i} value={filiere._id} >{filiere.name}</option>
                                 ))}
                             </select>
+                        </div>
+                        <div className="form-group my-3">
+                            <label className="font-weight-bold" htmlFor="entreprise">Email à contacter :</label>
+                            <input  id="email" type="email"  className="form-control" value={offre.email} onChange={handleChange}/>
+                        </div>
+                        <div className="form-group my-3">
+                            <label className="font-weight-bold" htmlFor="entreprise">Téléphone à contacter :</label>
+                            <input  id="telephone" type="text"  className="form-control" value={offre.telephone} onChange={handleChange}/>
                         </div>
                         <button className="btn btn-block btn-outline-primary my-2">Ajouter</button>
                     </form>

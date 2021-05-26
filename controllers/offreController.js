@@ -80,6 +80,7 @@ exports.updateOffre = (req, res) => {
 exports.offresByFiliere = (req, res, next, filiereId) => {
     
     Offre.find({filiere: filiereId}).populate('filiere')
+         .sort({createdAt:-1})
          .exec((error, offres) => {
 
             if(error || !offres) return res.status(404).json({

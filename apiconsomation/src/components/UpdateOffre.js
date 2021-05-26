@@ -9,7 +9,9 @@ function UpdateOffre(props) {
         title:'',
         description:'',
         entreprise:'',
-        filiere:''
+        filiere:'',
+        email:'',
+        telephone:''
     })
 
     const handleChange = (e) => {
@@ -27,7 +29,9 @@ function UpdateOffre(props) {
                          title: offreSelected.title,
                          description: offreSelected.description,
                          entreprise: offreSelected.entreprise,
-                         filiere: offreSelected.filiere._id
+                         filiere: offreSelected.filiere._id,
+                         email: offreSelected.email,
+                         telephone: offreSelected.telephone
                      })
                      return
                  }
@@ -91,6 +95,14 @@ function UpdateOffre(props) {
                                     <option key={i} value={filiere._id} >{filiere.name}</option>
                                 ))}
                             </select>
+                        </div>
+                        <div className="form-group my-3">
+                            <label className="font-weight-bold" htmlFor="entreprise">Email à contacter :</label>
+                            <input  id="email" type="email"  className="form-control" value={offre.email} onChange={handleChange}/>
+                        </div>
+                        <div className="form-group my-3">
+                            <label className="font-weight-bold" htmlFor="entreprise">Téléphone à contacter :</label>
+                            <input  id="telephone" type="text"  className="form-control" value={offre.telephone} onChange={handleChange}/>
                         </div>
                         <button className="btn btn-block btn-outline-primary my-2">Modifier</button>
                     </form>
