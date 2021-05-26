@@ -64,7 +64,7 @@ function Offres() {
         <div className="row">
         <div className="col-md-9">
         {offres && offres.map((offre, i) => (
-            <div className="card w-100 my-3" key={i}>
+            <div className="card w-100 my-3 border border-secondary" key={i}>
                 <div className="card-body">
                     <i style={{float:"right", cursor:"pointer", color:"red"}} 
                         className="fas fa-2x fa-times" title="supprimer l'offre"
