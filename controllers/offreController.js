@@ -79,7 +79,7 @@ exports.updateOffre = (req, res) => {
 
 exports.offresByFiliere = (req, res, next, filiereId) => {
     
-    Offre.find({filiere: filiereId})
+    Offre.find({filiere: filiereId}).populate('filiere')
          .exec((error, offres) => {
 
             if(error || !offres) return res.status(404).json({

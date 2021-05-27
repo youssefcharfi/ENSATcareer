@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../App.css';
 import axios from 'axios';
 
 
@@ -66,9 +65,9 @@ class Signup extends Component {
               </Link>
             </div>
             <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Add Book</h1>
+              <h1 className="display-4 text-center">Inscription</h1>
               <p className="lead text-center">
-                  Create new book
+                inscrivez-vous ! 
               </p>
 
               <form noValidate onSubmit={this.onSubmit}>
@@ -168,4 +167,4 @@ class Signup extends Component {
   }
 }
 
-export default CreateBook;
+export default Signup;
