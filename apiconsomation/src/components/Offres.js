@@ -37,7 +37,7 @@ function Offres() {
         {
             axios.delete('http://localhost:7500/api/offres/'+id)
                  .then(res => {
-                     if(res.status==204){
+                     if(res.status===204){
                          toastr.success("l'offre a été bien supprimer",'suppression avec succes')
                          getAllOffres()
                          return;
