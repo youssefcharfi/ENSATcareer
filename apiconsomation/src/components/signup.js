@@ -4,12 +4,16 @@ import { Link } from "react-router-dom";
 import "./signup.css";
 
 const RegisterScreen = ({ history }) => {
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmpassword, setConfirmPassword] = useState("");
+  const [filiere, setFiliere] = useState("");
+  const [niveau, setNiveau] = useState("");
+  const [description, setDescription] = useState("");
+  const [link, setLink] = useState("");
+  const [confirmpassword,setConfirmPassword]=useState("")
+  const [isEntreprise, setEntreprise] = useState("");
   const [error, setError] = useState("");
-
   const registerHandler = async (e) => {
     e.preventDefault();
 
@@ -32,9 +36,15 @@ const RegisterScreen = ({ history }) => {
       const { data } = await axios.post(
         "/api/auth/register",
         {
-          username,
+          name,
           email,
           password,
+          filiere,
+          niveau,
+          description,
+          link,
+          isEntreprise,
+
         },
         config
       );
@@ -56,14 +66,14 @@ const RegisterScreen = ({ history }) => {
         <h3 className="register-screen__title">Register</h3>
         {error && <span className="error-message">{error}</span>}
         <div className="form-group">
-          <label htmlFor="name">Username:</label>
+          <label htmlFor="name">Name:</label>
           <input
             type="text"
             required
             id="name"
-            placeholder="Enter username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Enter your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div className="form-group">
@@ -100,7 +110,45 @@ const RegisterScreen = ({ history }) => {
             value={confirmpassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
+           <div className="form-group">
+          <label htmlFor="name">Niveau:</label>
+          <input
+            type="text"
+            id="niveau"
+            placeholder="Enter your level"
+            value={niveau}
+            onChange={(e) => setNiveau(e.target.value)}
+          />
         </div>
+        <div className="form-group">
+          <label htmlFor="name">Filiere:</label>
+          <select name="cars"  id="filiere">
+           <option value={"gind"} OnChange={(e) => setFiliere(e.target.value)}>Genie Indistruelle et logistiques</option>
+           <option value={"ginfos"} OnChange={(e) => setFiliere(e.target.value)}>Genie Informatiques</option>
+           <option value={"gsea"} OnChange={(e) => setFiliere(e.target.value)}>Genie Systeme electroniques automatiques</option>
+           <option value={"gsea"} OnChange={(e) => setFiliere(e.target.value)}>Genie Systemes Reseaux et telecommunications</option>
+        </select>
+        </div>
+        <label htmlFor="name">Link:</label>
+          <input
+            type="text"
+            id="link"
+            placeholder="Enter the link for your company's website"
+            value={link}
+            onChange={(e) => setLink(e.target.value)}
+          />
+        </div>
+         <div>
+        <label htmlFor="name">Description:</label>
+          <input
+            type="text"
+            id="description"
+            placeholder="Enter a Description for your company's domain of activity"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </div>
+      
         <button type="submit" className="btn btn-primary">
           Register
         </button>

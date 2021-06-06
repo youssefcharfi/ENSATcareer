@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
+import  "./Menu.css"
+
 
 const Menu = (props) => {
 
@@ -9,27 +11,54 @@ const Menu = (props) => {
     }
     return { color: '#000' }
   }
+  const styles = {
+  
+      fontSize: 30 // Define font size here in Pixels
+    };
+ 
+  
+  
 
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-success">
-        <Link className="navbar-brand" to="/">ENSATcareer</Link>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item active">
-              <Link style={isActive(props.history, '/offres/add')} className="nav-link" to="/offres/add" >Nouvelle Offre</Link>
-            </li>
-            <li className="nav-item active">
-              <Link style={isActive(props.history, '/offres')} className="nav-link" to="/offres" >Les Offres</Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  )
-}
+    <div> 
+    <header>
 
-export default withRouter(Menu)
+	<nav class="navbar navbar-expand-lg">
+		<div class="container">
+			<a class="navbar-brand text-white" href="#"><i class="fa fa-graduation-cap fa-lg mr-2"></i>ENSATcareer</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nvbCollapse" aria-controls="nvbCollapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="nvbCollapse">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item pl-1">
+						<a class="nav-link" href={isActive(props.history, '/offres')} to="/offres"><i class="fa fa-home fa-fw mr-1"></i>Offres</a>
+					</li>
+					<li class="nav-item active pl-1">
+						<a class="nav-link" href= "#"><i class="fa fa-th-list fa-fw mr-1"></i>Nouveautées</a>
+					</li>
+					<li class="nav-item pl-1">
+						<a class="nav-link" href={isActive(props.history, '/offres/add')} to="/offres/add" ><i class="fa fa-info-circle fa-fw mr-1"></i>Ajouter un offre</a>
+					</li>
+					<li class="nav-item pl-1">
+						<a class="nav-link" href="#"><i class="fa fa-lightbulb fa-fw  mr-1"></i>Presentation des filieres</a>
+					</li>
+					<li class="nav-item pl-1">
+						<a class="nav-link" href="#"><i class="fa fa-user-plus fa-fw mr-1"></i>Partage d'experiences</a>
+					</li>
+					<li class="nav-item pl-1">
+						<a class="nav-link" href="#"><i class="fa fa-sign-in fa-fw mr-1"></i>Contactes</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	</header>
+
+
+	
+  </div>
+	
+  )}
+export default withRouter(Menu);

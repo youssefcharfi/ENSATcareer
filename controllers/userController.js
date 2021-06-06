@@ -3,11 +3,15 @@ const User = require("../models/user")
 const bcrypt=require('bcryptjs');
 const jwt=require('jsonwebtoken');
 const sendEmail=require('../utils/sendEmail')
+const Filiere =require("../models/filiere")
 
 const { registerValidation , loginValidation}= require('../routes/validation');
 
 exports.register= async(req,res)=>{  
 const {name,email,password,filiere,niveau}=req.body;
+// recherche l'id de filiere puisqu'on en recoit le nom dans le req 
+fil=Filiere.findOne({filiere});
+req.body.filiere=fil._id;
 if(! name|| !email || !password || !filiere ||!niveau){
  return  res.status(404).json({msg:"Please fill all the required fields !"});
 }

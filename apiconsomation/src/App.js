@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <h1>
-        saalamm
+      
       </h1>
     )
   }
